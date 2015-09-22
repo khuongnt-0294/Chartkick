@@ -2,6 +2,9 @@ Rails.application.routes.draw do
   root "users#index"
   resources :posts
   resources :users
+  resource :charts, only: [:completed_tasks] do
+    collection {get :index}
+  end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

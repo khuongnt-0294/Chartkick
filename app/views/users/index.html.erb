@@ -1,3 +1,4 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Users</h1>
@@ -27,6 +28,14 @@
 </table>
 
 <br>
+
+<%= pie_chart User.group(:name).count %>
+<%= column_chart User.group(:name).count %>
+<%= bar_chart User.group(:name).count %>
+<%= area_chart User.group(:name).count %>
+<%= geo_chart User.group(:name).count %>
+<%= line_chart User.group(:name).count %>
+
 
 <%= link_to 'New User', new_user_path %>
 <%= link_to 'Create Post', new_post_path %>
